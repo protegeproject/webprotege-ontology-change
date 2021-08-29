@@ -33,6 +33,11 @@ public record AddAxiomChange(@Nonnull OWLOntologyID ontologyId,
         }
     }
 
+    @Override
+    public boolean isAddAxiom() {
+        return true;
+    }
+
     @Nonnull
     @Override
     public OWLOntologyChangeRecord toOwlOntologyChangeRecord() {
