@@ -1,7 +1,9 @@
 package edu.stanford.protege.webprotege.change;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.semanticweb.owlapi.change.OWLOntologyChangeRecord;
 import org.semanticweb.owlapi.model.*;
 
@@ -23,6 +25,7 @@ import java.util.Set;
         @Type(AddImportChange.class),
         @Type(RemoveImportChange.class)
 })
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME)
 public interface OntologyChange {
 
     @Nonnull
@@ -35,20 +38,25 @@ public interface OntologyChange {
     OWLOntologyID ontologyId();
 
     @Nonnull
+    @JsonIgnore
     Set<OWLEntity> getSignature();
 
+    @JsonIgnore
     default boolean isChangeFor(@Nonnull AxiomType<? extends OWLAxiom> axiomType) {
         return isAxiomChange() && getAxiomOrThrow().getAxiomType().equals(axiomType);
     }
 
+    @JsonIgnore
     default boolean isAxiomChange() {
         return false;
     }
 
+    @JsonIgnore
     default boolean isAddAxiom() {
         return false;
     }
 
+    @JsonIgnore
     default boolean isRemoveAxiom() {
         return false;
     }
@@ -58,20 +66,25 @@ public interface OntologyChange {
      * method should only be called if isAxiomChange returns true.
      * @throws NoSuchElementException if this is not an axiom change
      */
+    @JsonIgnore
     default OWLAxiom getAxiomOrThrow() throws NoSuchElementException {
         throw new NoSuchElementException();
     }
 
     @Nonnull
+    @JsonIgnore
     OntologyChange replaceOntologyId(@Nonnull OWLOntologyID ontologyId);
 
     @Nonnull
+    @JsonIgnore
     OWLOntologyChangeRecord toOwlOntologyChangeRecord();
 
+    @JsonIgnore
     default boolean isRemoveOntologyAnnotation() {
         return false;
     }
 
+    @JsonIgnore
     default boolean isAddOntologyAnnotation() {
         return false;
     }
@@ -81,15 +94,18 @@ public interface OntologyChange {
     <R> R accept(@Nonnull OntologyChangeVisitorEx<R> visitorEx);
 
     @Nonnull
+    @JsonIgnore
     default OWLAnnotation getAnnotationOrThrow() {
         throw new NoSuchElementException();
     }
 
     @Nonnull
+    @JsonIgnore
     default OWLImportsDeclaration getImportsDeclarationOrThrow() {
         throw new NoSuchElementException();
     }
 
     @Nonnull
+    @JsonIgnore
     OntologyChange getInverseChange();
 }

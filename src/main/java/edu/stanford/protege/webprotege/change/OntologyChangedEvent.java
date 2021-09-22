@@ -12,12 +12,12 @@ import edu.stanford.protege.webprotege.common.UserId;
  *
  * An {@link OntologyChangedEvent} that records a low level axiom change to a project
  */
-@JsonTypeName("OntologyChangeEvent")
+@JsonTypeName("OntologyChangedEvent")
 public record OntologyChangedEvent(ProjectId projectId,
                                    UserId userId,
                                    OntologyChange ontologyChange) implements Event {
 
-    public static final String CHANNEL = "webprotege.projects.events.OntologyChange";
+    public static final String CHANNEL = "webprotege.projects.events.OntologyChanged";
 
     @Override
     public String getChannel() {

@@ -1,5 +1,6 @@
 package edu.stanford.protege.webprotege.change;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.semanticweb.owlapi.change.AddAxiomData;
 import org.semanticweb.owlapi.change.OWLOntologyChangeRecord;
