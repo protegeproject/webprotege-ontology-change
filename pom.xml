@@ -9,9 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.stanford.protege</groupId>
-	<artifactId>webprotege-change-api</artifactId>
+	<artifactId>webprotege-change</artifactId>
+	<description>Data structures for representing ontology changes</description>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>webprotege-change-api</name>
+	<name>webprotege-change</name>
 	<properties>
 		<java.version>16</java.version>
 	</properties>
