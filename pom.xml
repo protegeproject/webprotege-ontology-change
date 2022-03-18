@@ -11,7 +11,7 @@
 	<groupId>edu.stanford.protege</groupId>
 	<artifactId>webprotege-ontology-change</artifactId>
 	<description>Data structures for representing ontology changes</description>
-	<version>0.9.1-SNAPSHOT</version>
+	<version>0.9.1</version>
 	<name>webprotege-ontology-change</name>
 	<properties>
 		<java.version>16</java.version>
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
 			<artifactId>webprotege-common</artifactId>
-			<version>0.9.1-SNAPSHOT</version>
+			<version>0.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
@@ -47,12 +47,12 @@
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
 			<artifactId>webprotege-jackson</artifactId>
-			<version>0.9.0</version>
+			<version>0.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
 			<artifactId>webprotege-ipc</artifactId>
-			<version>0.9.0</version>
+			<version>0.9.1</version>
 		</dependency>
 
 		<dependency>
