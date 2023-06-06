@@ -11,7 +11,7 @@
 	<groupId>edu.stanford.protege</groupId>
 	<artifactId>webprotege-ontology-change</artifactId>
 	<description>Data structures for representing ontology changes</description>
-	<version>0.9.2-SNAPSHOT</version>
+	<version>0.9.2</version>
 	<name>webprotege-ontology-change</name>
 	<properties>
 		<java.version>16</java.version>
