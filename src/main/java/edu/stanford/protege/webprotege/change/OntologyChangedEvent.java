@@ -1,10 +1,7 @@
 package edu.stanford.protege.webprotege.change;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import edu.stanford.protege.webprotege.common.Event;
-import edu.stanford.protege.webprotege.common.EventId;
-import edu.stanford.protege.webprotege.common.ProjectId;
-import edu.stanford.protege.webprotege.common.UserId;
+import edu.stanford.protege.webprotege.common.*;
 
 /**
  * Matthew Horridge
@@ -17,7 +14,7 @@ import edu.stanford.protege.webprotege.common.UserId;
 public record OntologyChangedEvent(EventId eventId,
                                    ProjectId projectId,
                                    UserId userId,
-                                   OntologyChange ontologyChange) implements Event {
+                                   OntologyChange ontologyChange) implements ProjectEvent {
 
     public static final String CHANNEL = "webprotege.events.projects.OntologyChanged";
 
